@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>내캘린더 — 업무 일정체크</title>
+  <meta name="theme-color" content="#8B7CF6" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon/icon-192.png" />
+  <!-- Pretendard (jsDelivr CDN) -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="js/holidays.js"></script>
+  <script src="js/base-schedule.js"></script>
+  <script src="js/dates.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/schedule.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    // 서비스워커는 file://에서는 등록하지 않는다.
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js').catch(function (e) {
+          console.warn('서비스워커 등록 실패', e);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
