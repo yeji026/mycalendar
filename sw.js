@@ -1,5 +1,5 @@
 // 서비스워커 — 오프라인 지원
-const CACHE = 'workcal-v1';
+const CACHE = 'naecal-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -13,7 +13,10 @@ const ASSETS = [
   './js/app.js',
   './icon/icon.svg',
   './icon/icon-192.png',
-  './icon/icon-512.png'
+  './icon/icon-512.png',
+  './icon/icon-maskable-512.png',
+  './icon/apple-touch-icon.png',
+  './icon/favicon-32.png'
 ];
 
 self.addEventListener('install', function (e) {
